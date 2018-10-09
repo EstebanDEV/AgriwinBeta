@@ -1,0 +1,31 @@
+/* NAV */
+
+.nav-item, .nav-link.last  {
+    border-bottom: none !important;
+}
+.nav-link {
+    border-bottom: solid 1px #6c757d !important;
+    padding-left: 0 !important;
+}
+.nav-link.border-right {
+    border-right: none !important;
+}
+.nav-link.border-left {
+    border-left: none !important;
+}
+
+/* LOGIN */
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+}
+.form-login {
+    width: 100%;
+    padding-right: 0 !important;
+}
+.bloc-login-right {
+    padding-left: 0 !important;
+    border-left: none !important;
+    margin-top: 1rem !important;
+}

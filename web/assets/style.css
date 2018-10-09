@@ -1,0 +1,26 @@
+body {
+    background: linear-gradient(to left,#fafafa,#f0f0f0);
+}
+
+/* NAV */
+
+.nav-item {
+    border-bottom: solid 3px transparent;
+}
+.nav-item.active, .nav-item:hover {
+    border-bottom: solid 3px #c77911;
+}
+
+/* LOGIN */
+
+.container-login {
+    display: flex;
+}
+.form-login {
+    width: 60%;
+    padding-right: 4rem !important;
+}
+.bloc-login-right {
+    padding-left: 3rem !important;
+    border-left: solid 1px #dee2e6 !important;
+}

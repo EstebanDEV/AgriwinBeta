@@ -4,46 +4,79 @@
         <meta charset="utf-8" />
         <title>Agriwin - {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('assets/twbs/bootstrap/dist/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/style.css') }}" />
+        <link rel="stylesheet" media="screen and (max-width: 992px)" href="{{ asset('assets/style_min.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
     </head>
 
     <body>
         <header>
             <div class="container d-flex justify-content-between">
-                <div class="left">
+                <div>
                     <a href="{{ path('agriwin_site_homepage') }}">
                         <img src="{{ asset('images/header/logo.png') }}" alt="logo" width="120px" />
                     </a>
                 </div>
-                <div class="right">
+                <div>
                     <p>Bienvenue</p>
                 </div>
             </div>
         </header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark mt-1" style="background:linear-gradient(#646464,#323232);">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="container">
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
+                    {% block itempresentation %}
+                    <li class="nav-item">
+                    {% endblock %}
                         <a class="nav-link border-left border-right border-secondary pl-4 pr-4" href="#">Présentation</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link border-right border-secondary pr-4 pl-4" href="#">Pourquoi choisir Agriwin ?</a>
+                    {% block itemavantages %}
+                    <li class="nav-item dropdown">
+                    {% endblock %}
+                        <a class="nav-link dropdown-toggle border-right border-secondary pr-4 pl-4" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pourquoi choisir Agriwin ? </a>
+                        <div class="dropdown-menu ml-3 bg-secondary p-0 mt-2 rounded-4" style="width:85%;background:linear-gradient(#646464,#323232);" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> Avantages</a>
+                            <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> Tarifs</a>
+                        </div>
                     </li>
+                    {% block itemavis %}
                     <li class="nav-item">
+                    {% endblock %}
                         <a class="nav-link border-right border-secondary pr-4 pl-4" href="#">Clients & avis</a>
                     </li>
+                    {% block itemcontact %}
                     <li class="nav-item">
-                        <a class="nav-link border-right border-secondary pl-4 pr-4" href="#">Nous contacter</a>
+                    {% endblock %}
+                        <a class="nav-link last border-right border-secondary pl-4 pr-4" href="#">Nous contacter</a>
                     </li>
                 </ul>
             </div>
             </div>
         </nav>
+        {% for key, messages in app.session.flashbag.all() %}
+    {% for message in messages %}
+        <div class="alert alert-{{ key }}">
+            {{ message|trans({}, 'FOSUserBundle') }}
+        </div>
+    {% endfor %}
+{% endfor %}
         {% block fos_user_content %}
         {% endblock fos_user_content %} 
+        <footer style="background:linear-gradient(#646464,#323232);">
+            <div class="container d-flex justify-content-between mt-5 pt-5 pb-5">
+                <p>© 2018 - <a href="http://www.sodijantes.com" class="text-white" target="_blank">Sodijantes Industrie</a></p>
+                    <p><a href="#" class="text-white">Politique de confidentialité</a> <span>|</span>
+                    <a href="#" class="text-white">Mentions Légales</a> <span>|</span></p>
+                    <span class="fa fa-phone">+33 (0)2 31 40 80 50 </span>
+                <span class="fa fa-envelope-o">télégonflage@sodijantes.com</span>
+                </p>
+                <a href="http://www.sodijantes.com" target="_blank"><img src="{{ asset('images/footer/logo_sodijantes.png') }}" alt="logo sodijantes" /></a>
+            </div>
+        </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="{{ asset('assets/twbs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/twbs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
