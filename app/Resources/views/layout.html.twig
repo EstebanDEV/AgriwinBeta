@@ -14,11 +14,25 @@
             <div class="container d-flex justify-content-between">
                 <div>
                     <a href="{{ path('agriwin_site_homepage') }}">
-                        <img src="{{ asset('images/header/logo.png') }}" alt="logo" width="120px" />
+                        <img src="{{ asset('images/header/logo.png') }}" alt="Logo" width="120px" />
                     </a>
                 </div>
+                <div class="flags">
+                    <a href="en/{{ path(app.request.attributes.get('_route')) }}">
+                        <img src="{{ asset('images/flag_en.png') }}" alt="flag_en" />
+                    </a>
+                    <a href="{{ path(app.request.attributes.get('_route')) }}">
+                        <img src="{{ asset('images/flag_fr.png') }}" alt="flag_fr" />
+                    </a>
+                    <span>{{ app.request.get('_route') }}</span>
+                </div>
                 <div>
-                    <p>Bienvenue</p>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <div>Connecté en tant que {{ app.user.surname }}</div>
+                    <div><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></div>
+                    {% else %}
+                    <div><a href="{{ path('fos_user_security_login') }}">Se connecter</a></div>
+                    {% endif %}
                 </div>
             </div>
         </header>
@@ -27,54 +41,71 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="container">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    {% block itempresentation %}
-                    <li class="nav-item">
-                    {% endblock %}
-                        <a class="nav-link border-left border-right border-secondary pl-4 pr-4" href="#">Présentation</a>
-                    </li>
-                    {% block itemavantages %}
-                    <li class="nav-item dropdown">
-                    {% endblock %}
-                        <a class="nav-link dropdown-toggle border-right border-secondary pr-4 pl-4" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pourquoi choisir Agriwin ? </a>
-                        <div class="dropdown-menu ml-3 bg-secondary p-0 mt-2 rounded-4" style="width:85%;background:linear-gradient(#646464,#323232);" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> Avantages</a>
-                            <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> Tarifs</a>
-                        </div>
-                    </li>
-                    {% block itemavis %}
-                    <li class="nav-item">
-                    {% endblock %}
-                        <a class="nav-link border-right border-secondary pr-4 pl-4" href="#">Clients & avis</a>
-                    </li>
-                    {% block itemcontact %}
-                    <li class="nav-item">
-                    {% endblock %}
-                        <a class="nav-link last border-right border-secondary pl-4 pr-4" href="#">Nous contacter</a>
-                    </li>
-                </ul>
-            </div>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        {% block itempresentation %}
+                        <li class="nav-item">
+                        {% endblock %}
+                            <a class="nav-link border-left border-right border-secondary pl-4 pr-4" href="{{ path('agriwin_site_homepage') }}">Présentation</a>
+                        </li>
+                        {% block itemavantages %}
+                        <li class="nav-item dropdown">
+                        {% endblock %}
+                            <a class="nav-link dropdown-toggle border-right border-secondary pr-4 pl-4" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pourquoi choisir Agriwin ? </a>
+                            <div class="dropdown-menu ml-3 bg-secondary p-0 mt-2 rounded-4" style="width:85%;background:linear-gradient(#646464,#323232);" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> Avantages</a>
+                                <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> Tarifs</a>
+                            </div>
+                        </li>
+                        {% block itemavis %}
+                        <li class="nav-item">
+                        {% endblock %}
+                            <a class="nav-link border-right border-secondary pr-4 pl-4" href="#">Clients & avis</a>
+                        </li>
+                        {% block itemcontact %}
+                        <li class="nav-item">
+                        {% endblock %}
+                            <a class="nav-link last border-right border-secondary pl-4 pr-4" href="#">Nous contacter</a>
+                        </li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {% block itemcompte %}
+                        <li class="nav-item">
+                        {% endblock %}
+                            <a class="nav-link last border-right border-secondary pl-4 pr-4" href="{{ path('fos_user_profile_show') }}">MON COMPTE</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </nav>
+        {% block alert %}
         {% for key, messages in app.session.flashbag.all() %}
-    {% for message in messages %}
-        <div class="alert alert-{{ key }}">
-            {{ message|trans({}, 'FOSUserBundle') }}
-        </div>
-    {% endfor %}
-{% endfor %}
+            {% for message in messages %}
+                <div class="alert alert-{{ key }}">
+                    {{ message|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% endblock %}
         {% block fos_user_content %}
         {% endblock fos_user_content %} 
-        <footer style="background:linear-gradient(#646464,#323232);">
-            <div class="container d-flex justify-content-between mt-5 pt-5 pb-5">
-                <p>© 2018 - <a href="http://www.sodijantes.com" class="text-white" target="_blank">Sodijantes Industrie</a></p>
-                    <p><a href="#" class="text-white">Politique de confidentialité</a> <span>|</span>
-                    <a href="#" class="text-white">Mentions Légales</a> <span>|</span></p>
-                    <span class="fa fa-phone">+33 (0)2 31 40 80 50 </span>
-                <span class="fa fa-envelope-o">télégonflage@sodijantes.com</span>
-                </p>
-                <a href="http://www.sodijantes.com" target="_blank"><img src="{{ asset('images/footer/logo_sodijantes.png') }}" alt="logo sodijantes" /></a>
+        <footer class="border-top mt-5" style="background:linear-gradient(#787878,#323232);border-top-color:#c77911 !important;">
+            <div class="container d-flex justify-content-between pt-5 pb-5">
+                <div class="text-light">
+                    <div>© 2018 - <a href="http://www.sodijantes.com" class="text-light" target="_blank">Sodijantes Industrie</a></div>
+                    <div class="mt-2 text-white-50 col-sm-12 pl-0" style="line-height:28px;">
+                        <a href="#" class="text-white-50">Politique de confidentialité </a> &nbsp;|&nbsp;
+                        <a href="#" class="text-white-50"> Mentions Légales</a> &nbsp;|&nbsp;
+                        <a href="#" class="text-white-50">Contact</a>
+                    </div>
+                    <div class="mt-5 text-white-50">
+                        <span>+33 (0)2 31 40 80 50 </span> &nbsp;/&nbsp;
+                        <span>telegonflage@sodijantes.com</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="http://www.sodijantes.com" target="_blank"><img src="{{ asset('images/footer/logo_sodijantes.png') }}" alt="Logo de Sodijantes" /></a>
+                </div>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

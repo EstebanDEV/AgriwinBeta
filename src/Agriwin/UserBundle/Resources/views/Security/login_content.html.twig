@@ -1,50 +1,54 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<script>document.location.href="{{ path('agriwin_site_homepage') }}"</script>
+{% endif %}
+
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 <div class="container mt-4 container-login">
-<form action="{{ path("fos_user_security_check") }}" method="post" class="form-login">
-    {% if csrf_token %}
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    {% endif %}
-    <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">CONNEXION</h2>
-    <div class="form-group row pt-3">
-        <label for="email" class="col-sm-4 col-form-label">{{ 'profile.show.email'|trans }}</label>
-        <div class="col-sm-8">
-            <input type="email" class="form-control form-control-sm"  id="email" name="_username" required="required" autocomplete="email" />
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="password" class="col-sm-4 col-form-label">{{ 'security.login.password'|trans }}</label>
-        <div class="col-sm-8">
-            <input type="password" class="form-control form-control-sm"  id="password" name="_password" required="required" autocomplete="current-password" />
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-8">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="remember_me" name="_remember_me" value="on" />
-                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+    <form action="{{ path("fos_user_security_check") }}" method="post" class="form-login">
+        {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+        <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">CONNEXION</h2>
+        <div class="form-group row pt-3">
+            <label for="email" class="col-sm-4 col-form-label">{{ 'profile.show.email'|trans }}</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control form-control-sm"  id="email" name="_username" required="required" autocomplete="email" />
             </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-8">
-            <a href="#" style="color:#c77911;">Mot de passe oublié?</a>
+        <div class="form-group row">
+            <label for="password" class="col-sm-4 col-form-label">{{ 'security.login.password'|trans }}</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control form-control-sm"  id="password" name="_password" required="required" autocomplete="current-password" />
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-8">
-            <input type="submit" class="btn btn-dark" style="width:100%;" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+        <div class="form-group row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                </div>
+            </div>
         </div>
+        <div class="form-group row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <a href="#" style="color:#c77911;">Mot de passe oublié?</a>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <input type="submit" class="btn btn-dark" style="width:100%;" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+            </div>
+        </div>
+    </form>
+    <div class="bloc-login-right">
+        <h2 class="border-bottom border-dark pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">Vous n'êtes pas encore inscrit?</h2>
+        <p class="mt-3"><a href="{{ path('fos_user_registration_register') }}" class="text-dark">> Cliquez ici si pour créer votre compte afin d'accéder à la totalité du contenu Agriwin.</a></p>
     </div>
-</form>
-<div class="bloc-login-right">
-    <h2 class="border-bottom border-dark pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">Vous n'êtes pas encore inscrit?</h2>
-    <p class="mt-3"><a href="{{ path('fos_user_registration_register') }}" class="text-dark">> Je souhaite créer mon compte pour accéder à la totalité du contenu.</a></p>
-</div>
 </div>

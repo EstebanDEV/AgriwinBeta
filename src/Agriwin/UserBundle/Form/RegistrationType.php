@@ -18,6 +18,26 @@ class RegistrationType extends AbstractType
                 'label' => 'form.surname', 
                 'translation_domain' => 'FOSUserBundle',
             ))
+            ->add('mobile', null, array(
+                'label' => 'form.mobile', 
+                'translation_domain' => 'FOSUserBundle',
+            ))
+            ->add('pays', null, array(
+                'label' => 'form.pays', 
+                'translation_domain' => 'FOSUserBundle',
+            ))
+            ->add('ville', null, array(
+                'label' => 'form.ville', 
+                'translation_domain' => 'FOSUserBundle',
+            ))
+            ->add('postal', null, array(
+                'label' => 'form.postal', 
+                'translation_domain' => 'FOSUserBundle',
+            ))
+            ->add('adresse', null, array(
+                'label' => 'form.adresse', 
+                'translation_domain' => 'FOSUserBundle',
+            ))
         ; 
     }
 

@@ -1,31 +1,70 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="container">
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<script>document.location.href="{{ path('agriwin_site_homepage') }}"</script>
+{% endif %}
+
+<div class="container mt-4">
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}   
     {{ form_widget(form.username) }}
-    <div class="form-row">
+    <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">FORMULAIRE D'INSCRIPTION</h2>
+    <div class="form-row mt-4">
         <div class="form-group col-md-6">
-            {{ form_label(form.name, "Nom ") }}
+            {{ form_label(form.name, "Nom *") }}
             {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
         </div> 
         <div class="form-group col-md-6">
-            {{ form_label(form.surname, "Prénom ") }}
+            {{ form_label(form.surname, "Prénom *") }}
             {{ form_widget(form.surname, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
-    <div class="form-group">
-        {{ form_label(form.email, "Adresse e-mail ") }}
-        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form_label(form.pays, "Pays *") }}
+            {{ form_widget(form.pays, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-6">
+            {{ form_label(form.ville, "Ville *") }}
+            {{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div> 
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            {{ form_label(form.postal, "Code postal") }}
+            {{ form_widget(form.postal, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-9">
+            {{ form_label(form.adresse, "Adresse") }}
+            {{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div> 
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form_label(form.email, "Adresse e-mail *") }}
+            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-6">
+            {{ form_label(form.mobile, "Mobile") }}
+            {{ form_widget(form.mobile, {'attr': {'class': 'form-control', 'placeholder': 'Ex: 06 01 02 03 04'}}) }}
+        </div>
     </div>  
     <div class="form-row">
         <div class="form-group col-md-6">   
-            {{ form_label(form.plainPassword.first, "Mot de passe ") }}
+            {{ form_label(form.plainPassword.first, "Mot de passe *") }}
             {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
         </div>
         <div class="form-group col-md-6">
-            {{ form_label(form.plainPassword.second, "Retapez à nouveau ") }}
+            {{ form_label(form.plainPassword.second, "Retapez-le à nouveau *") }}
             {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
-    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    <div class="form-group custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="conditions" required="required"  /> 
+        <label class="custom-control-label" for="conditions">J'accepte les conditions d'utilisation *</label>
+    </div>
+    <div class="form-group">
+        <span class="text-muted">* champs obligatoires</span>
+    </div>
+    <input type="submit" class="btn btn-dark" value="Créer mon compte" />
 {{ form_end(form) }}
+</div>
