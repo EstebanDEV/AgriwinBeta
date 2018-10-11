@@ -17,21 +17,32 @@
                         <img src="{{ asset('images/header/logo.png') }}" alt="Logo" width="120px" />
                     </a>
                 </div>
-                <div class="flags">
-                    <a href="en/{{ path(app.request.attributes.get('_route')) }}">
-                        <img src="{{ asset('images/flag_en.png') }}" alt="flag_en" />
-                    </a>
-                    <a href="{{ path(app.request.attributes.get('_route')) }}">
-                        <img src="{{ asset('images/flag_fr.png') }}" alt="flag_fr" />
-                    </a>
-                    <span>{{ app.request.get('_route') }}</span>
-                </div>
-                <div>
+                <div class="d-flex flex-column">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a href="{{ path(app.request.get('_route'), {'_locale': 'en'}) }}">
+                                <img src="{{ asset('images/header/en.png') }}" alt="flag_en" />
+                            </a>&nbsp;    
+                            <a class="mr-5" href="{{ path(app.request.get('_route'), {'_locale': 'fr'}) }}">
+                                <img src="{{ asset('images/header/fr.png') }}" alt="flag_fr" />
+                            </a>
+                        </div>
+                        <div>
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <div>
+                                <a href="{{ path('fos_user_security_logout') }}" style="color:#c77911;">Se déconnecter</a>
+                            </div>
+                            {% else %}
+                            <div>
+                                <a href="{{ path('fos_user_security_login') }}" style="color:#c77911;">Se connecter</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <div>Connecté en tant que {{ app.user.surname }}</div>
-                    <div><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></div>
-                    {% else %}
-                    <div><a href="{{ path('fos_user_security_login') }}">Se connecter</a></div>
+                    <div class="mt-3">
+                       <spa>Connecté en tant que {{ app.user.surname }}</span>
+                    </div>
                     {% endif %}
                 </div>
             </div>
@@ -71,14 +82,13 @@
                         {% block itemcompte %}
                         <li class="nav-item">
                         {% endblock %}
-                            <a class="nav-link last border-right border-secondary pl-4 pr-4" href="{{ path('fos_user_profile_show') }}">MON COMPTE</a>
+                            <a class="nav-link last account border-right border-secondary pl-4 pr-4" href="{{ path('fos_user_profile_show') }}">MON COMPTE</a>
                         </li>
                         {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
-        {% block alert %}
         {% for key, messages in app.session.flashbag.all() %}
             {% for message in messages %}
                 <div class="alert alert-{{ key }}">
@@ -86,7 +96,6 @@
                 </div>
             {% endfor %}
         {% endfor %}
-        {% endblock %}
         {% block fos_user_content %}
         {% endblock fos_user_content %} 
         <footer class="border-top mt-5" style="background:linear-gradient(#787878,#323232);border-top-color:#c77911 !important;">

@@ -19,6 +19,9 @@
 .nav-link.border-left {
     border-left: none !important;
 }
+.nav-link.account {
+    border-top: solid 1px #6c757d !important;
+}
 
 /* LOGIN */
 
