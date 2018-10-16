@@ -41,7 +41,7 @@
                     </div>
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <div class="mt-3">
-                       <span>Connecté en tant que {{ app.user.surname }}</span>
+                       <span>Connecté en tant que {{ app.user.firstname }}</span>
                     </div>
                     {% endif %}
                 </div>
@@ -56,12 +56,12 @@
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         {% block itempresentation %}
                         <li class="nav-item">
-                        {% endblock %}
+                        {% endblock itempresentation %}
                             <a class="nav-link border-left border-right border-secondary pl-4 pr-4" href="{{ path('agriwin_site_homepage') }}">Présentation</a>
                         </li>
                         {% block itemavantages %}
                         <li class="nav-item dropdown">
-                        {% endblock %}
+                        {% endblock itemavantages %}
                             <a class="nav-link dropdown-toggle border-right border-secondary pr-4 pl-4" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pourquoi choisir Agriwin ? </a>
                             <div class="dropdown-menu ml-3 bg-secondary p-0 mt-2 rounded-4" style="width:85%;background:linear-gradient(#646464,#323232);" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> Avantages</a>
@@ -70,18 +70,18 @@
                         </li>
                         {% block itemavis %}
                         <li class="nav-item">
-                        {% endblock %}
+                        {% endblock itemavis %}
                             <a class="nav-link border-right border-secondary pr-4 pl-4" href="#">Clients & avis</a>
                         </li>
                         {% block itemcontact %}
                         <li class="nav-item">
-                        {% endblock %}
-                            <a class="nav-link last border-right border-secondary pl-4 pr-4" href="#">Nous contacter</a>
+                        {% endblock itemcontact %}
+                            <a class="nav-link last border-right border-secondary pl-4 pr-4" href="{{ path('agriwin_site_contact') }}">Nous contacter</a>
                         </li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         {% block itemcompte %}
                         <li class="nav-item">
-                        {% endblock %}
+                        {% endblock itemcompte %}
                             <a class="nav-link last account border-right border-secondary pl-4 pr-4" href="{{ path('fos_user_profile_show') }}">MON COMPTE</a>
                         </li>
                         {% endif %}
@@ -98,6 +98,8 @@
         {% endfor %}
         {% block fos_user_content %}
         {% endblock fos_user_content %} 
+        {% block section %}
+        {% endblock section %} 
         <footer class="border-top mt-5" style="background:linear-gradient(#787878,#323232);border-top-color:#c77911 !important;">
             <div class="container d-flex justify-content-between pt-5 pb-5">
                 <div class="text-light">

@@ -36,9 +36,9 @@ class User extends BaseUser
   protected $name;
 
   /**
-   * @ORM\Column(name="surname", type="string", length=30)
+   * @ORM\Column(name="firstname", type="string", length=30)
    */
-  protected $surname;
+  protected $firstname;
 
   /**
    * @ORM\Column(name="mobile", type="string", length=20, nullable=true)
@@ -70,9 +70,9 @@ class User extends BaseUser
     return $this->name;
   }
 
-  public function getSurname()
+  public function getFirstname()
   {
-    return $this->surname;
+    return $this->firstname;
   }
 
   public function getMobile()
@@ -107,9 +107,9 @@ class User extends BaseUser
     return $this;
   }
 
-  public function setSurname($surname)
+  public function setFirstname($firstname)
   {
-    $this->surname = $surname;
+    $this->firstname = $firstname;
 
     return $this;
   }

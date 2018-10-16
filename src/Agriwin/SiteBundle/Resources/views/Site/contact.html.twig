@@ -1,0 +1,49 @@
+{% extends 'AgriwinSiteBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block section %}
+<div class="container mt-4">
+    <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">CONTACT</h2>
+    {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.name, 'Votre nom *')}}
+            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.name) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.society, 'Société')}}
+            {{ form_widget(form.society, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.email, 'Votre adresse e-mail *')}}
+            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.email) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.mobile, 'Numéro de téléphone')}}
+            {{ form_widget(form.mobile, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.subject, 'Sujet de votre message *')}}
+            {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.subject) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.message, 'Message *')}}
+            {{ form_widget(form.message, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.message) }}
+        </div>
+        <div style="display:none">
+            {{ form_rest(form) }}
+        </div>
+        <div class="form-group">
+            <span class="text-muted">* champs obligatoires</span>
+        </div>
+        <input type="submit" class="btn btn-dark" value="Envoyer" />
+    {{ form_end(form) }}
+    <div class="mt-5">
+        <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5372916.561959665!2d-0.184954!3d48.886914!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9af39873b43bf8ff!2sSODIJANTES!5e0!3m2!1sfr!2sfr!4v1486650823398" width="100%" height="450" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+    </div>
+</div>
+{% endblock section %}

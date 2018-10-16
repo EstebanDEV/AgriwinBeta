@@ -13,10 +13,9 @@ class RegistrationType extends AbstractType
             ->add('name', null, array(
                 'label' => 'form.name', 
                 'translation_domain' => 'FOSUserBundle',
-
             ))
-            ->add('surname', null, array(
-                'label' => 'form.surname', 
+            ->add('firstname', null, array(
+                'label' => 'form.firstname', 
                 'translation_domain' => 'FOSUserBundle',
             ))
             ->add('mobile', null, array(
