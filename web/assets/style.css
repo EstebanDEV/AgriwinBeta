@@ -30,3 +30,9 @@ body {
     padding-left: 3rem !important;
     border-left: solid 1px #dee2e6 !important;
 }
+
+/* PROFILE SHOW */
+
+.info-user {
+    border-bottom: solid 1px #dee2e6;
+}

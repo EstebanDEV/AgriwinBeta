@@ -1,0 +1,47 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container">
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    <h2 class="border-bottom pb-1 mt-4" style="color:#c77911;border-bottom-color:#c77911 !important;">MODIFICATIONS</h2>
+    {{ form_widget(form.username, {'type': 'hidden'}) }}
+    {{ form_widget(form.email, {'type': 'hidden'}) }}
+    <div class="form-row mt-4">
+        <div class="form-group col-md-6">
+            {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+        </div> 
+        <div class="form-group col-md-6">
+            {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form_widget(form.pays, {'attr': {'class': 'form-control', 'placeholder': 'Pays'}}) }}
+        </div>
+        <div class="form-group col-md-6">
+            {{ form_widget(form.ville, {'attr': {'class': 'form-control', 'placeholder': 'Ville'}}) }}
+        </div>
+    </div> 
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            {{ form_widget(form.postal, {'attr': {'class': 'form-control', 'placeholder': 'Votre code postal'}}) }}
+        </div>          
+        <div class="form-group col-md-9">
+            {{ form_widget(form.adresse, {'attr': {'class': 'form-control', 'placeholder': 'Votre adresse postale'}}) }}
+        </div>
+    </div> 
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form_widget(form.mobile, {'attr': {'class': 'form-control', 'placeholder': 'Ex: 06 01 02 03 04'}}) }}
+        </div>
+    </div> 
+    <div class="form-row" class="">
+        <div class="form-group col-md-6" class="border border-top border-dark">
+            {{ form_label(form.current_password, "Mot de passe actuel") }}
+            {{ form_widget(form.current_password, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div> 
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+</div>

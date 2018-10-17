@@ -6,8 +6,8 @@
 <div class="container mt-4">
     <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">CONTACT</h2>
     {{ form_start(form) }}
-        <div class="form-group">
-            {{ form_label(form.name, 'Votre nom *')}}
+        <div class="form-group mt-4">
+            {{ form_label(form.name, 'Nom et prénom *')}}
             {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.name) }}
         </div>
@@ -16,7 +16,7 @@
             {{ form_widget(form.society, {'attr': {'class': 'form-control'}}) }}
         </div>
         <div class="form-group">
-            {{ form_label(form.email, 'Votre adresse e-mail *')}}
+            {{ form_label(form.email, 'Adresse e-mail *')}}
             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.email) }}
         </div>

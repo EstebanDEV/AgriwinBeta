@@ -1,0 +1,25 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container">
+<h2 class="border-bottom pb-1 mt-4" style="color:#c77911;border-bottom-color:#c77911 !important;">VOS INFORMATIONS</h2>
+<div class="fos_user_user_show">
+    <div class="row mt-4 info-user">
+        <p class="col-sm-6">{{ 'Nom'|trans }}: {{ user.name }}</p>
+        <p class="col-sm-6">{{ 'Prénom'|trans }}: {{ user.firstname }}</p>
+    </div>
+    <div class="row info-user mt-3">
+        <p class="col-sm-6">{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        <p class="col-sm-6">{{ 'Numéro de téléphone' }}: {{ user.mobile }}</p>
+    </div>
+    <div class="row info-user mt-3">
+        <p class="col-sm-6">{{ 'Pays' }}: {{ user.pays }}</p>
+        <p class="col-sm-6">{{ 'Ville' }}: {{ user.ville }}</p>
+    </div>
+    <div class="row mt-3">
+        <p class="col-sm-6">{{ 'Code postal' }}: {{ user.postal }}</p>
+        <p class="col-sm-6">{{ 'Adresse' }}: {{ user.adresse }}</p>
+    </div>
+    <br/>
+    <a class="btn btn-dark" href="{{ path('fos_user_profile_edit') }}">Modifier mes informations</a>
+</div>
+</div>
