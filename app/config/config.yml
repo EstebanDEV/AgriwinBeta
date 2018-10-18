@@ -13,6 +13,7 @@ fos_user:
     registration:
         form:
             type: Agriwin\UserBundle\Form\RegistrationType
+            validation_groups: [AgriwinRegistration]
         confirmation:
             template:   email/user_registering.html.twig
             enabled: true

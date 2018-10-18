@@ -34,14 +34,18 @@
             {{ form_widget(form.mobile, {'attr': {'class': 'form-control', 'placeholder': 'Ex: 06 01 02 03 04'}}) }}
         </div>
     </div> 
-    <div class="form-row" class="">
-        <div class="form-group col-md-6" class="border border-top border-dark">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {% if form_errors(form.current_password) %}
+            <div class="alert alert-danger pb-0">{{ form_errors(form.current_password) }}</div>
+            {% endif %}
             {{ form_label(form.current_password, "Mot de passe actuel") }}
             {{ form_widget(form.current_password, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div> 
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    <div class="d-flex">
+        <input type="submit" class="btn btn-dark" value="{{ 'profile.edit.submit'|trans }}" />
+        <a class="align-self-end ml-3" style="color:#c77911;" href=" {{ path('fos_user_change_password') }} ">Modifier le mot de passe >></a>
     </div>
 {{ form_end(form) }}
 </div>

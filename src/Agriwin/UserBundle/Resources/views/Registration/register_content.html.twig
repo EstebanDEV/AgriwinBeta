@@ -74,6 +74,9 @@
     <div class="form-group">
         <span class="text-danger">Attention, pour vous connecter, vous devrez activer votre compte en cliquant sur le lien qui vous sera envoyé par mail.</span>
     </div>
-    <input type="submit" class="btn btn-dark" value="Créer mon compte" />
+    <div class="d-flex">
+        <input type="submit" class="btn btn-dark" value="Créer mon compte" />
+        <a class="align-self-end ml-3" style="color:#c77911;" href=" {{ path('fos_user_security_login') }} "><< Retour</a>
+    </div>
 {{ form_end(form) }}
 </div>

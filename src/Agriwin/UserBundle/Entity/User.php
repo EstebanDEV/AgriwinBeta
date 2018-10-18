@@ -18,6 +18,16 @@ class User extends BaseUser
    */
   protected $id;
 
+  public function getCaptchaCode()
+  {
+    return $this->captchaCode;
+  }
+
+  public function setCaptchaCode($captchaCode)
+  {
+    $this->captchaCode = $captchaCode;
+  }
+
   public function __construct()
   {
     parent::__construct();

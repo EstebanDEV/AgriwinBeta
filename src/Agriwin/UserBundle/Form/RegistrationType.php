@@ -38,6 +38,7 @@ class RegistrationType extends AbstractType
                 'label' => 'form.adresse', 
                 'translation_domain' => 'FOSUserBundle',
             ))
+
         ; 
     }
 
