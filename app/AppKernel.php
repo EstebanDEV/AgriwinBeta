@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Agriwin\SiteBundle\AgriwinSiteBundle(),
             new Agriwin\UserBundle\AgriwinUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Captcha\Bundle\CaptchaBundle\CaptchaBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

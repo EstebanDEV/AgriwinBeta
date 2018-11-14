@@ -4,6 +4,7 @@ namespace Agriwin\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Captcha\Bundle\CaptchaBundle\Form\Type\CaptchaType;
 
 class RegistrationType extends AbstractType
 {
@@ -38,7 +39,10 @@ class RegistrationType extends AbstractType
                 'label' => 'form.adresse', 
                 'translation_domain' => 'FOSUserBundle',
             ))
-
+            ->add('captchaCode', CaptchaType::class, array(
+                'captchaConfig' => 'RegisterCaptcha',
+                'label' => 'form.captcha',
+            ))
         ; 
     }
 

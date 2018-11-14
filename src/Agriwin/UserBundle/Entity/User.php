@@ -4,6 +4,7 @@ namespace Agriwin\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use Captcha\Bundle\CaptchaBundle\Validator\Constraints as CaptchaAssert;
 
 /**
  * @ORM\Table(name="users")
@@ -17,6 +18,13 @@ class User extends BaseUser
    * @ORM\GeneratedValue(strategy="AUTO")
    */
   protected $id;
+
+  /**
+   * @CaptchaAssert\ValidCaptcha(
+   *      message = "CAPTCHA validation failed, try again."
+   * )
+   */
+  protected $captchaCode;
 
   public function getCaptchaCode()
   {
@@ -173,4 +181,5 @@ class User extends BaseUser
 
     return $this;
   }
+
 }

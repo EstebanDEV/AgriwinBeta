@@ -38,3 +38,17 @@
     border-left: none !important;
     margin-top: 1rem !important;
 }
+
+/* REGISTER */
+
+.container.register .form-group {
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+
+.container.register .form-group.captcha {
+    -ms-flex: 0 0 33.333333% !important;
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+}

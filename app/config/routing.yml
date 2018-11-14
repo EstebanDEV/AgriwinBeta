@@ -23,3 +23,6 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /{_locale}/profile
+
+captcha_routing:
+  resource: "@CaptchaBundle/Resources/config/routing.yml"

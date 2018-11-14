@@ -1,13 +1,10 @@
 <?php if (!class_exists('CaptchaConfiguration')) { return; }
 
-// BotDetect PHP Captcha configuration options
-
 return [
-  // Captcha configuration for example page
-  'ExampleCaptcha' => [
+  'RegisterCaptcha' => [
     'UserInputID' => 'captchaCode',
-    'ImageWidth' => 250,
-    'ImageHeight' => 50,
+    'CodeLength' => CaptchaRandomization::GetRandomCodeLength(4, 7),
+    'CodeStyle' => CodeStyle::Alpha,
   ],
 
 ];

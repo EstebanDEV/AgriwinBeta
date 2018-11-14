@@ -4,7 +4,7 @@
 <script>document.location.href="{{ path('agriwin_site_homepage') }}"</script>
 {% endif %}
 
-<div class="container mt-4">
+<div class="container mt-4 register">
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}   
     <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">FORMULAIRE D'INSCRIPTION</h2>
     {{ form_widget(form.username, {'type': 'hidden'}) }}
@@ -67,6 +67,10 @@
     <div class="form-group custom-control custom-checkbox">
         <input type="checkbox" class="custom-control-input" id="conditions" required="required"  /> 
         <label class="custom-control-label" for="conditions">J'accepte les conditions d'utilisation *</label>
+    </div>
+    <div class="form-group col-md-4 captcha">
+        {{ form_label(form.captchaCode, "Réécrivez les caractères ci-dessous : *") }}
+        {{ form_widget(form.captchaCode, {'attr': {'class': 'form-control mt-2'}}) }}
     </div>
     <div class="form-group">
         <span class="text-muted">* champs obligatoires</span>
