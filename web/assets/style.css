@@ -31,6 +31,12 @@ body {
     border-left: solid 1px #dee2e6 !important;
 }
 
+/* REGISTER */
+
+.container.register .captcha {
+    border-top: solid 1px #dee2e6;
+}
+
 /* PROFILE SHOW */
 
 .info-user {

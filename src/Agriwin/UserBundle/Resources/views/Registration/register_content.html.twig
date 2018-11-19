@@ -68,7 +68,10 @@
         <input type="checkbox" class="custom-control-input" id="conditions" required="required"  /> 
         <label class="custom-control-label" for="conditions">J'accepte les conditions d'utilisation *</label>
     </div>
-    <div class="form-group col-md-4 captcha">
+    {% if form_errors(form.captchaCode) %}
+    <div class="alert alert-danger pb-0">{{ form_errors(form.captchaCode) }}</div>
+    {% endif %}
+    <div class="form-group col-md-4 pt-3 captcha">
         {{ form_label(form.captchaCode, "Réécrivez les caractères ci-dessous : *") }}
         {{ form_widget(form.captchaCode, {'attr': {'class': 'form-control mt-2'}}) }}
     </div>

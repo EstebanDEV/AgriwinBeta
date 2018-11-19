@@ -1,29 +1,21 @@
 <?php
 
-/*
- * This file is part of the FOSUserBundle package.
- *
- * (c) FriendsOfSymfony <http://friendsofsymfony.github.com/>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Agriwin\UserBundle\Form\Type;
+namespace Agriwin\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Captcha\Bundle\CaptchaBundle\Form\Type\CaptchaType;
 
-class ChangePasswordFormType extends AbstractType
+class ChangePasswordType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        
+        $builder
+            ->add('captchaCode', CaptchaType::class, array(
+                'captchaConfig' => 'RegisterCaptcha',
+                'label' => 'form.captcha',
+            ))
+        ;
     }
 
     public function getParent()
