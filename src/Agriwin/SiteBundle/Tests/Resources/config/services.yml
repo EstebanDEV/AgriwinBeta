@@ -1,0 +1,4 @@
+services:
+#    agriwin_site.example:
+#        class: Agriwin\SiteBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

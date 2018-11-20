@@ -1,3 +1,30 @@
 {% extends 'AgriwinSiteBundle::layout.html.twig' %}
 
 {% block title %}Home{% endblock %}
+
+{% block itempresentation %}
+<li class="nav-item active">
+{% endblock itempresentation %}
+
+{% block section %}
+<div class="index">
+    <div class="col-md-12 pt-5">
+        <h1 class="text-center pt-5 text-white font-weight-bold">AGRIWIN®</h1>
+        <h4 class="text-center text-white">TÉLÉGONFLAGE</h4>
+    </div>
+    <div class="container mt-4">
+        <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">TÉLÉGONFLAGE AGRIWIN®</h2>
+        <h4 class="text-dark mt-4 intro pl-1">AGRIWIN ? Qu'est-ce que c'est ?</h4>
+        <div class="mt-4 text-dark">
+            <p><strong>AGRIWIN</strong> est la solution pour réguler et adapter la pression des pneus, depuis la cabine, en roulant et en fonction de l’utilisation.</p>
+            <p>Ultra Polyvalent, <strong>compatible toutes marques et adapté à toutes les combinaisons d’attelage</strong> : remorque, épandeur, semoir, travail du sol…</p>
+            <p><strong>AGRIWIN®</strong>, système embarqué qui régule la pression des pneus, en roulant, en fonction de vos besoins.</p>
+        </div>
+    </div>
+    <div class="grey">
+        <div class="container">
+            <img src="{{ asset('images/contenu/exemple-alerte-patinage.png') }}" alt="" />
+        </div>
+    </div>
+</div>
+{% endblock section %}

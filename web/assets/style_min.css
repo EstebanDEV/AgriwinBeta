@@ -52,3 +52,9 @@
     flex: 0 0 33.333333% !important;
     max-width: 33.333333% !important;
 }
+
+/* INDEX */
+
+.index .col-md-12 {
+    height: 300px;
+}
