@@ -1,6 +1,6 @@
 {% extends 'AgriwinSiteBundle::layout.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block itempresentation %}
 <li class="nav-item active">
@@ -9,10 +9,12 @@
 {% block section %}
 <div class="index">
     <div class="col-md-12 pt-5">
-        <h1 class="text-center pt-5 text-white font-weight-bold">AGRIWIN®</h1>
-        <h4 class="text-center text-white">TÉLÉGONFLAGE</h4>
+        <div class="mt-5 pt-2 pb-2 col-sm-3 mx-auto" style="background-color:rgba(0,0,0,0.5);">
+            <h1 class="text-center text-white font-weight-bold">AGRIWIN®</h1>
+            <h4 class="text-center text-white">TÉLÉGONFLAGE</h4>
+        </div>
     </div>
-    <div class="container mt-4">
+    <div class="container mt-4 mb-5">
         <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">TÉLÉGONFLAGE AGRIWIN®</h2>
         <h4 class="text-dark mt-4 intro pl-1">AGRIWIN ? Qu'est-ce que c'est ?</h4>
         <div class="mt-4 text-dark">
@@ -21,10 +23,33 @@
             <p><strong>AGRIWIN®</strong>, système embarqué qui régule la pression des pneus, en roulant, en fonction de vos besoins.</p>
         </div>
     </div>
-    <div class="grey">
+    <div class="grey pt-4 pb-5">
         <div class="container">
-            <img src="{{ asset('images/contenu/exemple-alerte-patinage.png') }}" alt="" />
+            <div class="first">
+                <img src="{{ asset('images/contenu/exemple-alerte-patinage.png') }}" alt="Illustration Télégonflage - CTIS" />
+                <div class="col-sm-6">
+                    <p class="pb-4 pt-5">Exemple d’une <strong>alerte patinage</strong> : le système vous propose d’adapter la pression pour réduire le patinage.</p>
+                    <p class="pb-4">Nous proposons aussi <strong>2 compresseurs additionnels hydrauliques</strong> (550 L/min et 4000 L/min) pour <strong>réduire les temps de gonflage</strong>.</p>
+                    <p>Exemple : Pour un convoi tracteur (AV 600/70R30 – AR 710/60R42) +tonne tridem (750/60R30.5), le temps de gonflage est de 3 minutes avec un compresseur de 4000 L/min.</p>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="container mt-4 mb-5">
+        <h4 class="text-dark mt-4 intro pl-1">Chez nous, la qualité est notre priorité</h4>
+        <div class="col-sm-6 mt-5">
+            <div class="stickers d-flex justify-content-between">
+                <img src="{{ asset('images/contenu/qualites-agriwin-presentation.png') }}" alt="Agriwin - Made in France" />
+                <img src="{{ asset('images/contenu/qualites-agriwin-presentation-2.png') }}" alt="Testé approuvé" />
+                <img src="{{ asset('images/contenu/qualites-agriwin-presentation-3.png') }}" alt="Agriwin - Brevet déposé" />
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/JUbzNQSc-bw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        
+    
     </div>
 </div>
 {% endblock section %}

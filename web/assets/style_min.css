@@ -4,6 +4,33 @@
  * All rights reserved
 */
 
+body {
+    font-size: 2.5em;
+}
+h1, h2, h3, h4 {
+    font-size: 1.5em;
+}
+.container { 
+    max-width: 99% !important;
+}
+.logo {
+    width: 240px;
+    height: 240px;
+}
+input {
+    font-size: 1.1em !important;
+    height: 1.5em !important;
+}
+.navbar-toggler-icon {
+    width: 3.5em !important;
+    height: 3.5em !important;
+    padding-bottom: 0 !important;
+}
+
+* {
+    word-wrap: break-word;
+}
+
 /* NAV */
 
 .nav-item, .nav-link.last  {
@@ -56,5 +83,19 @@
 /* INDEX */
 
 .index .col-md-12 {
-    height: 300px;
+    height: 500px;
+}
+
+.index .grey .first {
+    display: flex;
+    flex-direction: column;
+}
+.index .grey .first .col-sm-6 {
+    max-width: 99% !important;
+}
+.index .grey .first img {
+    width: 800px;
+    height: 800px;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }

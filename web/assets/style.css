@@ -6,7 +6,12 @@
 
 body {
     background: linear-gradient(to left,#fafafa,#f0f0f0);
-    font-size: 17px;
+    font-size: 16px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
 }
 
 /* NAV */
@@ -54,8 +59,8 @@ body {
     background-size: 100%;
     background-position: left;
     background-repeat: no-repeat;
-    height: 450px;
     border-top: solid 1px #c77911;
+    height: 450px;
 }
 .index h4.intro {
     border-left: solid 3px #c77911;
@@ -63,3 +68,22 @@ body {
 .index .grey {
     background-color: #dcdcdc;
 }
+.index .grey .first {
+    display: flex;
+    justify-content: space-between;
+}
+.index .grey .first img {
+    width: 500px;
+    height: 500px;
+}
+.index .stickers img {
+    height: 100px;
+}
+.index .video, .index iframe {
+    width: 560px;
+    height: 310px;
+}
+
+
+
+
