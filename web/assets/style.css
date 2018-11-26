@@ -83,7 +83,7 @@ body {
     width: 560px;
     height: 310px;
 }
-
-
-
-
+.index .img-presentation img {
+    width: 300px;
+    height: 200px;
+}
