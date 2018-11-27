@@ -71,7 +71,16 @@ p {
 .bloc-login-right {
     padding-left: 0 !important;
     border-left: none !important;
-    margin-top: 1rem !important;
+    margin-top: 2rem !important;
+}
+.form-login .btn {
+    margin-top: 20px !important;
+}
+.form-login .form-check-input {
+    width: 35px;
+}
+.form-login .form-check label {
+    padding-left: 30px;
 }
 
 /* REGISTER */
@@ -86,16 +95,28 @@ p {
     flex: 0 0 33.333333% !important;
     max-width: 99% !important;
 }
-.BDC_CaptchaDiv, .BDC_CaptchaImageDiv, .BDC_CaptchaImage, #RegisterCaptcha_CaptchaImage {
+.BDC_CaptchaDiv, .BDC_CaptchaImageDiv, .BDC_CaptchaImage, #RegisterCaptcha_CaptchaImage, #RegisterCaptcha_CaptchaImageDiv {
     width: 650px !important;
     height: 150px !important;
 }
 .BDC_ReloadIcon, .BDC_SoundIcon {
-    width: 60px !important;
+    width: 70px !important;
+    margin: 30px !important;
 }
-.BDC_CaptchaIconsDiv {
+.BDC_CaptchaIconsDiv, #RegisterCaptcha_CaptchaIconsDiv {
     position: absolute;
-    margin-left: 0 2px -4px 100px !important;
+    margin: 0 2px -4px 420px !important;
+}
+.custom-control-label {
+    padding-left: 25px;
+}
+.custom-control-label::before {
+    width: 40px !important;
+    height: 40px !important;
+}
+.container.register .d-flex {
+    justify-content: space-between !important;
+    margin-top: 40px !important;
 }
 
 /* INDEX */
@@ -166,5 +187,43 @@ p {
     line-height: 55px !important;
 }
 
-/* FORMS */
+/* CHANGE PASSWORD */
 
+.captcha.changepass {
+    max-width: 99% !important;
+}
+
+/* SHOW PROFILE */
+
+.info-account .btn {
+    width: 500px !important;
+    font-size: 40px;
+}
+.info-account .row {
+    display: flex;
+    flex-direction: column;
+}
+.info-account .row p {
+    max-width: 99% !important;
+}
+
+/* EDIT PROFILE */
+
+.edit-account .form-row {
+    display: flex;
+    flex-direction: column;
+}
+.edit-account .form-row .form-group {
+    max-width: 99% !important;
+    margin-top: 20px;
+}
+.edit-account .form-row .form-group input {
+    padding: 20px !important;
+}
+.edit-account .captcha {
+    max-width: 99% !important;
+}
+.edit-account .d-flex, .d-flex.changepass {
+    justify-content: space-between;
+    margin-top: 40px;
+}

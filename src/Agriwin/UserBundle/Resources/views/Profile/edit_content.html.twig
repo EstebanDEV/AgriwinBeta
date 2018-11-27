@@ -1,6 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="container">
+<div class="container edit-account">
 {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
     <h2 class="border-bottom pb-1 mt-4" style="color:#c77911;border-bottom-color:#c77911 !important;">MODIFICATIONS</h2>
     {{ form_widget(form.username, {'type': 'hidden'}) }}
