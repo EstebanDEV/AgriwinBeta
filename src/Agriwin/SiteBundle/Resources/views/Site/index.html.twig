@@ -1,6 +1,8 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
 {% extends 'AgriwinSiteBundle::layout.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}{{ 'index.page_title'|trans }}{% endblock %}
 
 {% block itempresentation %}
 <li class="nav-item active">
@@ -11,16 +13,14 @@
     <div class="col-md-12 pt-5">
         <div class="mt-5 pt-2 pb-2 col-sm-3 mx-auto bloc-opacity" style="background-color:rgba(0,0,0,0.5);">
             <h1 class="text-center text-white font-weight-bold">AGRIWIN®</h1>
-            <h4 class="text-center text-white">TÉLÉGONFLAGE</h4>
+            <h4 class="text-center text-white">{{ 'index.principal_title'|trans }}</h4>
         </div>
     </div>
     <div class="container mt-4 mb-5">
         <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">TÉLÉGONFLAGE AGRIWIN®</h2>
-        <h4 class="text-dark mt-4 intro pl-1">AGRIWIN ? Qu'est-ce que c'est ?</h4>
+        <h4 class="text-dark mt-4 intro pl-1">{{ 'index.first_title'|trans|raw }}</h4>
         <div class="mt-4 text-dark">
-            <p><strong>AGRIWIN</strong> est la solution pour réguler et adapter la pression des pneus, depuis la cabine, en roulant et en fonction de l’utilisation.</p>
-            <p>Ultra Polyvalent, <strong>compatible toutes marques et adapté à toutes les combinaisons d’attelage</strong> : remorque, épandeur, semoir, travail du sol…</p>
-            <p><strong>AGRIWIN®</strong>, système embarqué qui régule la pression des pneus, en roulant, en fonction de vos besoins.</p>
+            {{ 'index.first_bloc'|trans|raw }}
         </div>
     </div>
     <div class="grey pt-4 pb-5">
@@ -28,15 +28,13 @@
             <div class="first">
                 <img src="{{ asset('images/contenu/exemple-alerte-patinage.png') }}" alt="Illustration Télégonflage - CTIS" />
                 <div class="col-sm-6">
-                    <p class="pb-4 pt-5">Exemple d’une <strong>alerte patinage</strong> : le système vous propose d’adapter la pression pour réduire le patinage.</p>
-                    <p class="pb-4">Nous proposons aussi <strong>2 compresseurs additionnels hydrauliques</strong> (550 L/min et 4000 L/min) pour <strong>réduire les temps de gonflage</strong>.</p>
-                    <p>Exemple : Pour un convoi tracteur (AV 600/70R30 – AR 710/60R42) +tonne tridem (750/60R30.5), le temps de gonflage est de 3 minutes avec un compresseur de 4000 L/min.</p>
+                    {{ 'index.second_bloc'|trans|raw }}
                 </div>
             </div>
         </div>
     </div>
     <div class="container mt-4 mb-5">
-        <h4 class="text-dark mt-4 intro pl-1">Chez nous, la qualité est notre priorité</h4>
+        <h4 class="text-dark mt-4 intro pl-1">{{ 'index.three_title'|trans }}</h4>
         <div class="d-flex justify-content-between three">
             <div class="col-sm-6 mt-5 bloc-video">
                 <div class="stickers d-flex justify-content-between">
@@ -49,9 +47,9 @@
                 </div>
             </div>
             <div class="col-sm-4 img-presentation">
-                <img src="{{ asset('images/contenu/telegonflage-img-1.jpg') }}" alt="Agriwin - Made in France" />
-                <img class="mt-3" src="{{ asset('images/contenu/telegonflage-img-2.jpg') }}" alt="Testé approuvé" />
-                <img class="mt-3" src="{{ asset('images/contenu/telegonflage-img-3.jpg') }}" alt="Agriwin - Brevet déposé" />
+                <img src="{{ asset('images/contenu/telegonflage-img-1.jpg') }}" alt="" />
+                <img class="mt-3" src="{{ asset('images/contenu/telegonflage-img-2.jpg') }}" alt="" />
+                <img class="mt-3" src="{{ asset('images/contenu/telegonflage-img-3.jpg') }}" alt="" />
             </div>
         </div>
     </div>

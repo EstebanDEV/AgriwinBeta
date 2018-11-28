@@ -67,14 +67,14 @@
                         {% endblock itemavantages %}
                             <a class="nav-link dropdown-toggle border-right border-secondary pr-4 pl-4" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ 'layout.nav.why'|trans }} </a>
                             <div class="dropdown-menu ml-3 bg-secondary p-0 mt-2 rounded-4" style="width:85%;background:linear-gradient(#646464,#323232);" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> {{ 'layout.nav.advantages'|trans }}</a>
-                                <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="#">> {{ 'layout.nav.price'|trans }}</a>
+                                <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="{{ path('agriwin_site_avantages') }}">> {{ 'layout.nav.advantages'|trans }}</a>
+                                <a class="dropdown-item text-light bg-secondary p-3" style="background:linear-gradient(#646464,#323232);" href="{{ path('agriwin_site_tarifs') }}">> {{ 'layout.nav.price'|trans }}</a>
                             </div>
                         </li>
                         {% block itemavis %}
                         <li class="nav-item">
                         {% endblock itemavis %}
-                            <a class="nav-link border-right border-secondary pr-4 pl-4" href="#">{{ 'layout.nav.customers'|trans }}</a>
+                            <a class="nav-link border-right border-secondary pr-4 pl-4" href="{{ path('agriwin_site_avis') }}">{{ 'layout.nav.customers'|trans }}</a>
                         </li>
                         {% block itemcontact %}
                         <li class="nav-item">

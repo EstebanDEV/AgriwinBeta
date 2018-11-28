@@ -97,3 +97,14 @@ form:
     password_confirmation: 'Répéter le mot de passe'
     new_password: 'Nouveau mot de passe'
     new_password_confirmation: 'Répéter le nouveau mot de passe'
+index:
+    page_title: Accueil
+    principal_title: 'TÉLÉGONFLAGE'
+    first_title: 'AGRIWIN ? Qu''est-ce que c''est ?'
+    first_bloc: '<p><strong>AGRIWIN</strong> est la solution pour réguler et adapter la pression des pneus, depuis la cabine, en roulant et en fonction de l’utilisation.</p>
+                <p>Ultra Polyvalent, <strong>compatible toutes marques et adapté à toutes les combinaisons d’attelage</strong> : remorque, épandeur, semoir, travail du sol…</p>
+                <p><strong>AGRIWIN®</strong>, système embarqué qui régule la pression des pneus, en roulant, en fonction de vos besoins.</p>'
+    second_bloc: '<p class="pb-4 pt-5">Exemple d’une <strong>alerte patinage</strong> : le système vous propose d’adapter la pression pour réduire le patinage.</p>
+                    <p class="pb-4">Nous proposons aussi <strong>2 compresseurs additionnels hydrauliques</strong> (550 L/min et 4000 L/min) pour <strong>réduire les temps de gonflage</strong>.</p>
+                    <p>Exemple : Pour un convoi tracteur (AV 600/70R30 – AR 710/60R42) +tonne tridem (750/60R30.5), le temps de gonflage est de 3 minutes avec un compresseur de 4000 L/min.</p>'
+    three_title: 'Chez nous, la qualité est notre priorité'

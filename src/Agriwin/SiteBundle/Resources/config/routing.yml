@@ -2,6 +2,18 @@ agriwin_site_homepage:
     path:     /
     defaults: { _controller: AgriwinSiteBundle:Site:index }
 
+agriwin_site_avantages:
+    path:     /avantages
+    defaults: { _controller: AgriwinSiteBundle:Site:avantages }
+
+agriwin_site_tarifs:
+    path:     /tarifs
+    defaults: { _controller: AgriwinSiteBundle:Site:tarifs }
+
+agriwin_site_avis:
+    path:     /avis
+    defaults: { _controller: AgriwinSiteBundle:Site:avis }
+
 agriwin_site_contact:
     path:     /contact
     defaults: { _controller: AgriwinSiteBundle:Site:contact }

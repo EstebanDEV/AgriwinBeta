@@ -17,6 +17,33 @@ class SiteController extends Controller
         return new Response($content);
     }
 
+    public function avantagesAction()
+    {
+        $content = $this
+            ->get('templating')
+            ->render('AgriwinSiteBundle:Site:avantages.html.twig');
+    
+        return new Response($content);
+    }
+
+    public function tarifsAction()
+    {
+        $content = $this
+            ->get('templating')
+            ->render('AgriwinSiteBundle:Site:tarifs.html.twig');
+    
+        return new Response($content);
+    }
+
+    public function avisAction()
+    {
+        $content = $this
+            ->get('templating')
+            ->render('AgriwinSiteBundle:Site:avis.html.twig');
+    
+        return new Response($content);
+    }
+
     public function contactAction(Request $request)
     {
         $form = $this->createForm('Agriwin\SiteBundle\Form\ContactType', null, array(

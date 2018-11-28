@@ -96,3 +96,13 @@ form:
     password_confirmation: 'Repeat password'
     new_password: 'New password'
     new_password_confirmation: 'Repeat new password'
+index:
+    page_title: Home
+    principal_title: 'CTIS'
+    first_title: 'AGRIWIN ? What is it ?'
+    first_bloc: '<p><strong>AGRIWIN</strong> is the solution to regulate and adapt the tire pressure according to the user needs, from the cabin, while on motion.</p>
+                <p>Our innovation is very versatile, <strong>compatible with every tractor brand and can fit all types of machines</strong> : tractor, trailer, spreader, sprayer,  slurry tankers…</p>'
+    second_bloc: '<p class="pb-4 pt-5">Example of a <strong>slippage alert</strong> : the system indicates a high slippage rate, it is advised to adapt the tire pressure to decrease the slippage rate.</p>
+                    <p class="pb-4">Sodijantes Industrie also offers <strong>two additional hydraulic compressors</strong> (550 L/min and 4000 L/min).</p>
+                    <p>For example : For a convoy tractor (AV 600/70R30 – AR 710/60R42) + three axle spreader (750/60R30.5), the inflation time will be 3 minutes with our 4000 L / min compressor.</p>'
+    three_title: 'With us, quality is our priority'

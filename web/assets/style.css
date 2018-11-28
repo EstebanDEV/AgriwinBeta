@@ -87,3 +87,31 @@ body {
     width: 300px;
     height: 200px;
 }
+
+/* AVANTAGES */
+
+.avantages h4.intro {
+    border-left: solid 3px #c77911;
+}
+.avantages .grey {
+    background-color: #dcdcdc;
+}
+.avantages .second {
+    display: flex;
+    flex-direction: column;
+}
+.avantages .second .list {
+    display: flex; 
+    margin-bottom: 40px;
+    margin-left: 180px;
+}
+.avantages .second .list p {
+    align-self: flex-end;
+    margin: 0 0 0 30px !important;
+}
+.avantages ul {
+    line-height: 35px;
+}
+.avantages .grey .four p {
+    line-height: 35px;
+}
