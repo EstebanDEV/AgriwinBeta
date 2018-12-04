@@ -64,10 +64,10 @@
             {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
-    <div class="form-group custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="conditions" required="required"  /> 
+    <!-- <div class="form-group custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="conditions" /> 
         <label class="custom-control-label" for="conditions">J'accepte les conditions d'utilisation *</label>
-    </div>
+    </div> -->
     {% if form_errors(form.captchaCode) %}
     <div class="alert alert-danger pb-0">{{ form_errors(form.captchaCode) }}</div>
     {% endif %}

@@ -17,3 +17,11 @@ agriwin_site_avis:
 agriwin_site_contact:
     path:     /contact
     defaults: { _controller: AgriwinSiteBundle:Site:contact }
+
+agriwin_site_mentions:
+    path:     /mentions-legales
+    defaults: { _controller: AgriwinSiteBundle:Site:mentionsLegales }
+
+agriwin_site_politique:
+    path:     /politique-confidentialite
+    defaults: { _controller: AgriwinSiteBundle:Site:politiqueConfidentialite }

@@ -98,4 +98,22 @@ class SiteController extends Controller
 
         return $mailer->send($message);
     }
+
+    public function mentionsLegalesAction()
+    {
+        $content = $this
+            ->get('templating')
+            ->render('AgriwinSiteBundle:Site:mentions-legales.html.twig');
+    
+        return new Response($content);
+    }
+
+    public function politiqueConfidentialiteAction()
+    {
+        $content = $this
+            ->get('templating')
+            ->render('AgriwinSiteBundle:Site:politique-confidentialite.html.twig');
+    
+        return new Response($content);
+    }
 }

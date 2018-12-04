@@ -227,3 +227,34 @@ p {
     justify-content: space-between;
     margin-top: 40px;
 }
+
+/* AVANTAGES */
+
+.avantages li {
+    line-height: 60px;
+}
+.avantages .four p {
+    line-height: 55px !important;
+    max-width: 99% !important;
+    margin-left: 0 !important;
+    margin-top: 30px;
+}
+.avantages .four img {
+    width: 800px !important;
+    height: 400px !important;
+    margin: auto !important;
+}
+.avantages .four .d-flex {
+    flex-direction: column;
+}
+.avantages .first img {
+    width: 950px !important;
+    height: 400px !important;
+}
+.avantages .second .list {
+    margin-left: 0 !important;
+}
+.avantages .second img {
+    width: 130px !important;
+    height: 110px !important;
+}
