@@ -258,3 +258,32 @@ p {
     width: 130px !important;
     height: 110px !important;
 }
+
+/* TARIFS */
+
+.tarifs .bloc {
+    border-bottom: solid 2px #c77911 !important;
+}
+.tarifs .bloc .contain {
+    max-width: 99% !important;
+    flex-direction: column;
+    margin-top: 70px !important;
+    padding-bottom: 70px !important;
+}
+.tarifs .bloc .contain .txt, .tarifs .bloc .contain .img {
+   margin: auto !important;
+}
+.tarifs .bloc .contain .img {
+    margin-top: 30px !important;
+}
+.tarifs .bloc .contain img {
+    width: 850px !important;
+}
+.tarifs p {
+    max-width: 80% !important;
+    padding: 55px !important;
+    border: solid 4px #c77911;
+}
+.tarifs .bloc .contain img.isobus {
+    width: 700px !important;
+}

@@ -115,3 +115,21 @@ body {
 .avantages .grey .four p {
     line-height: 35px;
 }
+
+/* TARIFS */
+
+.tarifs .bloc {
+    border-bottom: solid 1px #c0c0c0;
+}
+.tarifs h4.intro {
+    border-left: solid 3px #c77911;
+}
+.tarifs p {
+    border: solid 3px #c77911;
+    border-radius: 50%;
+    padding: 25px;
+    color: #92d050;
+}
+.tarifs p .price {
+    color: #c77911;
+}

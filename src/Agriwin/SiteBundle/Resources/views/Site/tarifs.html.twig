@@ -5,88 +5,38 @@
 {% block title %}Tarifs{% endblock %}
 
 {% block section %}
-<div class="avantages">
-    <div class="container mt-4 mb-5 first">
-        <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">LES AVANTAGES</h2>
-        <h4 class="text-dark mt-4 intro pl-1">Le télégonflage AGRIWIN® vous fait gagner 2500 € minimum par an !</h4>
-        <div class="mt-5 text-center">
-            <img src="{{ asset('images/contenu/avantages_eco.png') }}" alt="" width="800" />
-        </div>
-    </div>
-    <div class="grey pt-4 pb-5">
-        <div class="container second">
-            <div class="list">
-                <img src="{{ asset('images/contenu/avantages_pic_1.png') }}" width="70" height="70" alt="" />
-                <p>Alarme patinage (grâce à une combinaison GPS intégré au boîtier + capteur compte-tour)</p>
-            </div>
-            <div class="list">
-                <img src="{{ asset('images/contenu/avantages_pic_2.png') }}" width="70" height="70" alt="" />
-                <p>Alarme si la combinaison pression/vitesse n’est pas correcte.</p>
-            </div>
-            <div class="list">
-                <img src="{{ asset('images/contenu/avantages_pic_3.png') }}" width="70" height="70" alt="" />
-                <p>Grâce à la prise USB, on peut :</p>
-            </div>
-            <div class="list">
-                <img src="{{ asset('images/contenu/avantages_pic_4.png') }}" width="70" height="70" alt="" />
-                <p>Récupérer les données de localisation</p>
-            </div>
-            <div class="list">
-                <img src="{{ asset('images/contenu/avantages_pic_5.png') }}" width="70" height="70" alt="" />
-                <p>Récupérer l’historique des alarmes</p>
-            </div>
-        </div>
-    </div>
+<div class="tarifs">
     <div class="container mt-4 mb-5">
-        <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">INTERETS ECONOMIQUES</h2>
-        <h4 class="text-dark mt-4 intro pl-1">La durée de vie des pneumatiques</h4>
-        <ul class="mt-4">
-            <li>Dans les champs, l’usure est légèrement diminuée car les pneus souples s’adaptent mieux au terrain et sont moins sensibles aux obstacles durs.</li>
-            <li>Sur route, l’usure est fortement diminuée à pression adaptée. La durée de vie d’un pneu peut augmenter de 15 à 30 %.</li>
-        </ul>
-        <h4 class="text-dark mt-4 intro pl-1">Le gain de temps</h4>
-        <ul class="mt-4">
-            <li>Dans les champs, par forte traction (travail du sol,
-épandage), le taux de patinage peut atteindre 15 à 20%. Une
-pression adaptée réduit le patinage à 5 à 10 %. De ce fait, le
-temps de travail sera réduit d’autant.</li>
-            <li>En adaptant la pression des pneus, les fenêtres
-d’intervention sont élargies par la possibilité de travailler sur
-des sols encore humides, sans les inconvénients connus. De
-même, un travail commencé peut être terminé même si les
-conditions météo se dégradent.</li>
-        </ul>
-        <h4 class="text-dark mt-4 intro pl-1">La possibilité d’utiliser un tracteur moins puissant</h4>
-        <ul class="mt-4">
-            <li>A pression adaptée, la résistance au roulement du train
-roulant diminue sensiblement et la puissance de traction
-nécessaire diminue d’autant.</li>
-            <li>De ce fait, un tracteur moins puissant et aussi moins lesté
-peut être utilisé avec une consommation encore diminuée.</li>
-        </ul>
-    </div>
-    <div class="grey pt-4 pb-5">
-        <div class="container four">
-            <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">AMELIORATION DU RENDEMENT AGRONOMIQUE</h2>
-            <h4 class="text-dark mt-4 intro pl-1 mb-4">Tassement diminué</h4>
-            <div class="d-flex">
-                <img src="{{ asset('images/contenu/avantages_agro_1.png') }}" width="400" height="300" alt="" />
-                <p class="col-sm-6 ml-5">La porosité du sol est préservée.
-L’absorption d’eau, l’aération et
-la présence des lombrics sont
-maintenues.<br />
-<strong>Les rendements agronomiques
-sont améliorés dès les premières
-années.</strong></p>
+        <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">NOS OFFRES AGRIWIN</h2>
+        <h4 class="text-dark mt-4 intro pl-1">Pour tracteur</h4>
+        <div class="bloc">
+            <div class="contain mt-5 d-flex justify-content-around mx-auto pb-5 col-sm-6">
+                <div class="col-sm-8 txt">
+                    <p class="col-sm-8 text-center"><strong>1 kit Tracteur</strong> (équipement pour 4 roues + boîter électronique) <strong><span class="price">5500€</span> NET HT</strong></p>
+                </div>
+                <div class="img">
+                    <img src="{{ asset('images/tarifs/tracteur.png') }}" alt="" width="400" />
+                </div>
             </div>
-            <h4 class="text-dark mt-5 intro pl-1 mb-4">Cisaillement diminué</h4>
-            <div class="d-flex">
-                <img src="{{ asset('images/contenu/avantages_agro_2.png') }}" width="400" height="300" alt="" />
-                <p class="col-sm-6 ml-5">Le cisaillement de la couche
-d’humus ou de la couche
-racinaire diminue avec la
-réduction du patinage.
-</p>
+        </div>
+        <div class="bloc">
+            <div class="contain mt-5 d-flex justify-content-around mx-auto pb-5 col-sm-6">
+                <div class="col-sm-8 txt">
+                    <p class="col-sm-8 text-center"><strong>Offre sérénité</strong> (équipement pour 4 roues + boîter électronique + montage) <strong><span class="price">6995€</span> NET HT</strong></p>
+                </div>
+                <div class="img">
+                    <img src="{{ asset('images/tarifs/tracteur2.png') }}" alt="" width="400" />
+                </div>
+            </div>
+        </div>
+        <div class="bloc">
+            <div class="contain mt-5 d-flex justify-content-around mx-auto pb-5 col-sm-6">
+                <div class="col-sm-8 txt">
+                    <p class="col-sm-8 text-center"><strong>1 kit Tracteur</strong> (équipement pour 4 roues + liaison ISOBUS) <strong><span class="price">5900€</span> NET HT</strong></p>
+                </div>
+                <div class="img">
+                    <img src="{{ asset('images/tarifs/isobus.jpg') }}" class="isobus" alt="" width="300" />
+                </div>
             </div>
         </div>
     </div>
