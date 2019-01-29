@@ -5,6 +5,9 @@
 {% block title %}Avantages{% endblock %}
 
 {% block section %}
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
 <div class="avantages">
     <div class="container mt-4 mb-5 first">
         <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">LES AVANTAGES</h2>
@@ -112,4 +115,11 @@ immédiatement.
         </div>
     </div>
 </div>
+
+{% else %}
+
+<span class="text-alert">Veuillez vous connecter pour voir les avantages Agriwin.</span>
+
+{% endif %}
+
 {% endblock section %}

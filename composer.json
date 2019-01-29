@@ -33,7 +33,8 @@
         "twbs/bootstrap": "4.1.3",
         "twig/twig": "^1.0||^2.0",
         "friendsofsymfony/user-bundle": "dev-master",
-        "captcha-com/symfony-captcha-bundle": "4.*"
+        "captcha-com/symfony-captcha-bundle": "4.*",
+        "coresphere/console-bundle": "~0.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

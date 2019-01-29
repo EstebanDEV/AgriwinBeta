@@ -59,7 +59,7 @@ class SiteController extends Controller
                 if($this->sendMail($form->getData())) {
                     
                     return $this->redirectToRoute('agriwin_site_homepage');
-                
+                  
                 } else {
                     
                     var_dump('Erreur');
@@ -83,10 +83,8 @@ class SiteController extends Controller
         $mailer = \Swift_Mailer::newInstance($transport);
 
         $message = \Swift_Message::newInstance($data['subject'])
-            ->setFrom(array($agriwinContactMail => 'Message de '.$data['name']))
-            ->setTo(array(
-                $agriwinContactMail => $agriwinContactMail
-            ))
+            ->setFrom(array($data['email'] => 'Message de '.$data['name']))
+            ->setTo(array($agriwinContactMail))
             ->setBody($this->renderView('AgriwinSiteBundle:Email:contact.txt.twig', array(
                 'message' => $data['message'],
                 'society' => $data['society'],

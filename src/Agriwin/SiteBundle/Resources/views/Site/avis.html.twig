@@ -9,4 +9,13 @@
 {% endblock itemavis %}
 
 {% block section %}
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+{% else %}
+
+<span class="text-alert">Veuillez vous connecter pour consulter les avis de nos clients.</span>
+
+{% endif %}
+
 {% endblock section %}

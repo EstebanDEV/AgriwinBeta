@@ -23,12 +23,14 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between">
                         <div class="lang">
+                            {% block flags %}
                             <a href="{{ path(app.request.get('_route'), {'_locale': 'en'}) }}" style="text-decoration:none;"/>
                                 <img src="{{ asset('images/header/en.png') }}" alt="flag_en" />
                             </a>&nbsp;    
                             <a class="mr-5" href="{{ path(app.request.get('_route'), {'_locale': 'fr'}) }}" style="text-decoration:none;">
                                 <img src="{{ asset('images/header/fr.png') }}" alt="flag_fr" />
-                            </a>
+                            </a> 
+                            {% endblock flags %}
                         </div>
                         <div>
                             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
