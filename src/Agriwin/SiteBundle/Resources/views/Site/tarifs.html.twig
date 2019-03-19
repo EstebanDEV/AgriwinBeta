@@ -47,7 +47,9 @@
 
 {% else %}
 
-<span class="text-alert">Veuillez vous connecter pour consulter les tarifs Agriwin.</span>
+<div class="container mt-4">
+    <span class="alert alert-danger">Veuillez vous connecter pour voir les tarifs Agriwin <a href="{{ path('fos_user_security_login') }}" class="alert-link">en cliquant ici</a>.</span>
+</div>
 
 {% endif %}
 

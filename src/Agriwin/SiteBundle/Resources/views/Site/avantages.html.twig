@@ -118,7 +118,9 @@ immédiatement.
 
 {% else %}
 
-<span class="text-alert">Veuillez vous connecter pour voir les avantages Agriwin.</span>
+<div class="container mt-4">
+    <span class="alert alert-danger">Veuillez vous connecter pour voir les avantages Agriwin <a href="{{ path('fos_user_security_login') }}" class="alert-link">en cliquant ici</a>.</span>
+</div>
 
 {% endif %}
 

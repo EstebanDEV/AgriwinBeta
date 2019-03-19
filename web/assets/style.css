@@ -55,12 +55,7 @@ body {
 /* INDEX */
 
 .index .col-md-12 {
-    background-image: url('../images/contenu/telegonflage-photo-presentation.jpg');
-    background-size: 100%;
-    background-position: left;
-    background-repeat: no-repeat;
-    border-top: solid 1px #c77911;
-    height: 450px;
+
 }
 .index h4.intro {
     border-left: solid 3px #c77911;

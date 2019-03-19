@@ -4,16 +4,17 @@
 <script>document.location.href="{{ path('agriwin_site_homepage') }}"</script>
 {% endif %}
 
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-
 <div class="container mt-4 container-login">
     <form action="{{ path("fos_user_security_check") }}" method="post" class="form-login">
         {% if csrf_token %}
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         {% endif %}
         <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">CONNEXION</h2>
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+        {% endif %}
         <div class="form-group row pt-3">
             <label for="email" class="col-sm-4 col-form-label">{{ 'profile.show.email'|trans }}</label>
             <div class="col-sm-8">
