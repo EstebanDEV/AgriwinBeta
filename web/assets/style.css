@@ -55,8 +55,9 @@ body {
 /* INDEX */
 
 .index .col-md-12 {
-
+    background-color: #dedede;
 }
+
 .index h4.intro {
     border-left: solid 3px #c77911;
 }
@@ -68,8 +69,8 @@ body {
     justify-content: space-between;
 }
 .index .grey .first img {
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
 }
 .index .stickers img {
     height: 100px;
