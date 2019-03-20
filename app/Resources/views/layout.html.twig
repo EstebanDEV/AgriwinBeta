@@ -12,7 +12,41 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
     </head>
 
-    <body>
+<script>
+    function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var cookie=getCookie("cible");
+  if (cookie != "") {
+    return cookie;
+  }
+}
+
+function checkCible() {
+    if (checkCookie() == "tank air wheel") {
+        document.getElementById('fos_user_registration_form_cible').value = "tank air wheel";
+    } else if (checkCookie() == "telegonflage") {
+        document.getElementById('fos_user_registration_form_cible').value = "telegonflage";
+    } else {
+        document.getElementById('fos_user_registration_form_cible').value = "";
+    }
+} 
+</script>
+
+    <body onload="checkCible()">
         <header>
             <div class="container d-flex justify-content-between">
                 <div>

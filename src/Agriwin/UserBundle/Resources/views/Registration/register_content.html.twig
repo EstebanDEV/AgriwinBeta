@@ -7,50 +7,23 @@
 <div class="container mt-4 register">
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}   
     <h2 class="border-bottom pb-1" style="color:#c77911;border-bottom-color:#c77911 !important;">FORMULAIRE D'INSCRIPTION</h2>
-    {{ form_widget(form.username, {'type': 'hidden'}) }}
-    <div class="form-row mt-4">
-        <div class="form-group col-md-6">
-            {{ form_label(form.name, "Nom *") }}
-            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
-        </div> 
-        <div class="form-group col-md-6">
-            {{ form_label(form.firstname, "Prénom *") }}
-            {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            {{ form_label(form.pays, "Pays *") }}
-            {{ form_widget(form.pays, {'attr': {'class': 'form-control'}}) }}
-        </div>
-        <div class="form-group col-md-6">
-            {{ form_label(form.ville, "Ville *") }}
-            {{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }}
-        </div>
-    </div> 
-    <div class="form-row">
-        <div class="form-group col-md-3">
-            {{ form_label(form.postal, "Code postal") }}
-            {{ form_widget(form.postal, {'attr': {'class': 'form-control'}}) }}
-        </div>          
-        <div class="form-group col-md-9">
-            {{ form_label(form.adresse, "Adresse") }}
-            {{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}
-        </div>
-    </div> 
-     {% if form_errors(form.email) %}
+    {{ form_widget(form.cible, {'type': 'hidden', 'value': ''}) }}
+    {% if form_errors(form.username) %}
+    <div class="alert alert-danger pb-0">{{ form_errors(form.username) }}</div>
+    {% endif %}
+    {% if form_errors(form.email) %}
     <div class="alert alert-danger pb-0">{{ form_errors(form.email) }}</div>
     {% endif %}
-    <div class="form-row">
+    <div class="form-row mt-4">
+        <div class="form-group col-md-6">
+            {{ form_label(form.username, "Identifiant *") }}
+            {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+        </div> 
         <div class="form-group col-md-6">
             {{ form_label(form.email, "Adresse e-mail *") }}
             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
         </div>
-        <div class="form-group col-md-6">
-            {{ form_label(form.mobile, "Mobile") }}
-            {{ form_widget(form.mobile, {'attr': {'class': 'form-control', 'placeholder': 'Ex: 06 01 02 03 04'}}) }}
-        </div>
-    </div>  
+    </div>
     {% if form_errors(form.plainPassword.first) %}
     <div class="alert alert-danger pb-0">{{ form_errors(form.plainPassword.first) }}</div>
     {% endif %} 

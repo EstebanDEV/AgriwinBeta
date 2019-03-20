@@ -49,12 +49,12 @@ class User extends BaseUser
   }
 
   /**
-   * @ORM\Column(name="name", type="string", length=30)
+   * @ORM\Column(name="name", type="string", length=30, nullable=true)
    */
   protected $name;
 
   /**
-   * @ORM\Column(name="firstname", type="string", length=30)
+   * @ORM\Column(name="firstname", type="string", length=30, nullable=true)
    */
   protected $firstname;
 
@@ -64,12 +64,12 @@ class User extends BaseUser
   protected $mobile;
 
   /**
-   * @ORM\Column(name="pays", type="string", length=30)
+   * @ORM\Column(name="pays", type="string", length=30, nullable=true)
    */
   protected $pays;
 
   /**
-   * @ORM\Column(name="ville", type="string", length=50)
+   * @ORM\Column(name="ville", type="string", length=50, nullable=true)
    */
   protected $ville;
 
@@ -82,6 +82,11 @@ class User extends BaseUser
    * @ORM\Column(name="adresse", type="string", length=200, nullable=true)
    */
   protected $adresse;
+
+  /**
+   * @ORM\Column(name="cible", type="string", length=50, nullable=true)
+   */
+  protected $cible;
 
   public function getName()
   {
@@ -116,6 +121,11 @@ class User extends BaseUser
   public function getAdresse()
   {
     return $this->adresse;
+  }
+
+  public function getCible()
+  {
+    return $this->cible;
   }
 
   public function setName($name)
@@ -167,17 +177,16 @@ class User extends BaseUser
     return $this;
   }
 
+  public function setCible($cible)
+  {
+    $this->cible = $cible;
+
+    return $this;
+  }
+
   public function setUsername($username)
   {
-    $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $longueurMax = strlen($caracteres);
-    $chaineAleatoire = '';
-    for ($i = 0; $i < 30; $i++)
-    {
-      $chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
-    }
-
-    $this->username = $chaineAleatoire;
+    $this->username = $username;
 
     return $this;
   }
