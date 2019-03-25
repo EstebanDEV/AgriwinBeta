@@ -112,6 +112,9 @@ function checkCible() {
                         {% endblock itemavis %}
                             <a class="nav-link border-right border-secondary pr-4 pl-4" href="{{ path('agriwin_site_avis') }}">{{ 'layout.nav.customers'|trans }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link account border-right border-secondary pl-4 pr-4" href="{{ path('fos_user_profile_show') }}">Produits en cours</a>
+                        </li>
                         {% block itemcontact %}
                         <li class="nav-item">
                         {% endblock itemcontact %}
