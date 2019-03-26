@@ -130,3 +130,6 @@ body {
     color: #c77911;
 }
 
+.tarifs .col-sm-5 h4 {
+    border-bottom: solid 3px #c77911;
+}
