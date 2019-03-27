@@ -15,7 +15,7 @@ fos_user:
             type: Agriwin\UserBundle\Form\RegistrationType
         confirmation:
             template:   email/user_registering.html.twig
-            enabled: true
+            enabled: false
             from_email:
                 address: '%mailer_user%'
                 sender_name: '%mailer_user%'
